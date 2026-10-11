@@ -1,0 +1,385 @@
+<head>
+<!-- htmlaunch:enhanced:v2 -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22hsl(348%2C72%25%2C58%25)%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22hsl(18%2C72%25%2C44%25)%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20text-anchor%3D%22middle%22%20font-family%3D%22ui-sans-serif%2Csystem-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EV%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#46147b">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="VBX Pro Booth Mode | deployed with HTMLaunch">
+<link rel="canonical" href="https://anthonysells17-collab.github.io/myvbxpro/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VBX Pro Booth Mode">
+<meta property="og:title" content="VBX Pro Booth Mode">
+<meta property="og:description" content="VBX Pro Booth Mode | deployed with HTMLaunch">
+<meta property="og:url" content="https://anthonysells17-collab.github.io/myvbxpro/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fanthonysells17-collab.github.io%2Fmyvbxpro%2F?w=1200&h=630">
+<meta property="og:image:alt" content="VBX Pro Booth Mode">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VBX Pro Booth Mode">
+<meta name="twitter:description" content="VBX Pro Booth Mode | deployed with HTMLaunch">
+<meta name="twitter:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fanthonysells17-collab.github.io%2Fmyvbxpro%2F?w=1200&h=630">
+<meta name="twitter:image:alt" content="VBX Pro Booth Mode">
+</head>
+<title>VBX Pro Booth Mode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: single-screen iPad presenter, five steps across a top bar, black stage with VBX red glow, big touch targets */
+:root{
+  --bg:#f5f4f1; --panel:#ffffff; --panel2:#f0efec; --line:rgba(23,23,26,.12);
+  --fg:#17171a; --muted:#6b6b72; --red:#e3262b; --orange:#ff6a1f;
+  --ink:#c41d22; --soft:#3d3d43; --hint:#85848b; --field:#ffffff; --press:#ebeae6;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:18px;line-height:1.5;margin:0;overflow:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+input,select,textarea{user-select:text}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.app{height:100%;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.app::before{content:"";position:absolute;left:50%;bottom:-60%;width:150%;height:90%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 100%,rgba(227,38,43,.10),transparent 65%);pointer-events:none}
+header{position:relative;z-index:2;display:flex;align-items:center;gap:24px;padding:14px 24px;border-bottom:1px solid var(--line)}
+.logo{font-weight:600;letter-spacing:.18em;font-size:18px;white-space:nowrap}
+.logo span{color:var(--red)}
+.steps{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.steps::-webkit-scrollbar{display:none}
+.sbtn{display:flex;align-items:center;gap:10px;background:none;border:none;padding:10px 14px;border-radius:999px;color:var(--muted);white-space:nowrap;font-size:15px}
+.sbtn i{font-style:normal;font-size:13px;font-weight:600;color:var(--red)}
+.sbtn[aria-current="step"]{background:rgba(227,38,43,.1);color:var(--ink)}
+.reset{background:none;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;color:var(--muted);white-space:nowrap}
+main{position:relative;z-index:1;flex:1;min-height:0;overflow:auto;padding:28px 28px 120px}
+.screen{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(42px,5.4vw,68px)}
+h1 em,h2 em{font-style:italic;color:var(--red)}
+h2{font-size:clamp(34px,4vw,48px)}
+h3{font-size:26px;font-weight:600}
+p{margin:0}
+.lead{font-size:20px;font-weight:300;color:var(--muted);max-width:60ch}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:120px;transition:border-color .15s,background .15s}
+.tile:active{transform:scale(.98)}
+.tile b{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.tile span{font-size:14px;color:var(--muted)}
+.tile.on{border-color:var(--red);background:rgba(227,38,43,.12)}
+.stat{background:var(--panel);border-radius:16px;border-top:4px solid var(--red);padding:22px;display:flex;flex-direction:column;gap:6px}
+.stat .v{font-family:var(--serif);font-size:54px;line-height:.9;color:var(--red);font-variant-numeric:lining-nums}
+.stat .l{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.stat .d{font-size:14px;color:var(--muted)}
+.stat .src{font-size:12px;color:var(--hint);margin-top:auto;padding-top:6px}
+.stat.hl{background:linear-gradient(160deg,rgba(227,38,43,.16),var(--panel) 60%)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+.flow .fs{background:var(--panel);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;position:relative}
+.fs .n{width:44px;height:44px;border-radius:50%;border:1px solid var(--red);display:grid;place-items:center;font-size:16px;font-weight:600}
+.fs:last-child .n{background:var(--red)}
+.fs .st{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-top:4px}
+.fs b{font-size:17px;font-weight:600;line-height:1.25;letter-spacing:-.01em}
+.fs span{font-size:14.5px;color:var(--muted)}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.meta div{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:4px}
+.meta .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.meta .v{font-size:16px;font-weight:500}
+/* calculator */
+.calc{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:start}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+.inputs{display:flex;flex-direction:column;gap:14px}
+.row{display:grid;grid-template-columns:1fr 250px;gap:14px;align-items:center;background:var(--panel);border-radius:14px;padding:12px 14px 12px 18px}
+.row label{font-size:16px}
+.row small{display:block;font-size:12.5px;color:var(--muted)}
+.stepper{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--field)}
+.stepper button{width:60px;height:56px;border:none;background:var(--panel2);font-size:28px;line-height:1}
+.stepper button:active{background:var(--press)}
+.stepper .in{flex:1;display:flex;align-items:center;justify-content:center;gap:2px;font-size:24px;font-weight:600;font-variant-numeric:lining-nums tabular-nums}
+.stepper input{width:100%;max-width:110px;background:none;border:none;color:var(--fg);text-align:center;font:inherit;-moz-appearance:textfield;appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stepper input:focus{outline:none}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;height:56px;border-radius:12px;border:1px solid var(--line);background:var(--field);font-size:15px}
+.seg button.on{border-color:var(--red);background:rgba(227,38,43,.16)}
+.out{background:var(--panel);border-radius:18px;border-top:4px solid var(--red);padding:26px;display:flex;flex-direction:column;gap:16px;position:sticky;top:0}
+.out .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.out .pay{font-family:var(--serif);font-size:clamp(46px,5.4vw,66px);line-height:.95}
+.out .mon{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:.95;color:var(--red);font-variant-numeric:lining-nums}
+.lines{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+.ln b{color:var(--fg);font-weight:500;font-variant-numeric:tabular-nums}
+.note{font-size:12.5px;color:var(--hint)}
+/* lead */
+.leadwrap{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+@media (max-width:900px){.leadwrap{grid-template-columns:1fr}}
+form{background:var(--panel);border-radius:18px;border-top:4px solid var(--red);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .full{grid-column:1/-1}
+.f{display:flex;flex-direction:column;gap:6px}
+.f label{font-size:13px;color:var(--muted)}
+.f input,.f select,.f textarea{font:inherit;font-size:18px;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:10px;padding:13px 14px;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--red)}
+.big-btn{grid-column:1/-1;height:62px;border:none;border-radius:12px;background:var(--red);color:#fff;font-size:16px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 10px 40px rgba(227,38,43,.35)}
+.big-btn:active{transform:scale(.99)}
+.err{grid-column:1/-1;color:var(--ink);font-size:15px}
+.side{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--panel);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.card .v{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.card .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.done{display:flex;flex-direction:column;gap:14px;align-items:flex-start;background:var(--panel);border-radius:18px;border-top:4px solid var(--red);padding:30px}
+.done pre{white-space:pre-wrap;font-family:var(--sans);font-size:14px;background:var(--field);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0;user-select:all;width:100%}
+.ghost{height:52px;padding:0 22px;border-radius:12px;border:1px solid var(--line);background:none;font-size:15px}
+.recent{display:flex;flex-direction:column;gap:8px;max-height:280px;overflow:auto}
+.recent div{font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px}
+.recent b{color:var(--fg);font-weight:500}
+/* bottom nav */
+.nav{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;justify-content:space-between;gap:12px;padding:14px 24px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 60%,transparent)}
+.nav button{height:58px;padding:0 30px;border-radius:12px;font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.nav .back{background:none;border:1px solid var(--line);color:var(--muted)}
+.nav .next{background:var(--red);border:none;color:#fff;box-shadow:0 10px 40px rgba(227,38,43,.35)}
+.nav button:disabled{opacity:.35}
+button.stat{border:none;text-align:left;color:inherit;cursor:pointer}
+.stat .more{display:none;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+.stat.open .more{display:flex}
+.stat.open{grid-column:span 1;box-shadow:0 0 0 1px var(--red)}
+.stat .more p{font-size:14.5px;color:var(--soft)}
+.stat .kind{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.meter{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.bars{display:flex;gap:4px}.bars i{width:22px;height:4px;background:var(--press);display:block}.bars i.on{background:var(--red)}
+.mech{background:var(--panel);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.mflow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mflow div{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--soft)}
+.mflow b{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--red);display:grid;place-items:center;font-size:14px;font-weight:600}
+@media (max-width:900px){.mflow{grid-template-columns:1fr 1fr}}
+.tier{background:var(--panel);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.tier b{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.tier .t{font-size:22px;font-weight:600;color:var(--red);line-height:1.1;letter-spacing:-.01em}
+.tier span{font-size:15px;color:var(--soft)}
+.tier .sn{font-size:12px!important;color:var(--muted)!important;letter-spacing:.04em;margin-top:auto}
+.tier.hlt{border:1px solid var(--red);background:rgba(227,38,43,.1)}
+.dtabs{max-width:760px}
+.how{border-top:1px solid var(--line);padding-top:12px}
+.how summary{cursor:pointer;font-size:14px;color:var(--ink)}
+.how ul{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+.tbl{display:flex;flex-direction:column;background:var(--panel);border-radius:16px;overflow:hidden}
+.tr{display:grid;grid-template-columns:1.2fr 1fr 1.2fr 1fr;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);font-size:16px}
+.tr.th{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.tr.us{background:rgba(227,38,43,.12)}.tr.us span:first-child{color:var(--ink);font-size:16px;font-weight:600}
+.tr span:first-child{font-size:15px;font-weight:600}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}}
+.stat,.out,.card,.tier,.mech,.row,.tbl{box-shadow:0 0 0 1px var(--line),0 2px 10px rgba(23,23,26,.04)}
+header{background:rgba(255,255,255,.85)}
+.stat.hl{background:linear-gradient(160deg,rgba(227,38,43,.08),var(--panel) 60%)}
+</style>
+
+<div class="app">
+  <header>
+    <div class="logo">VBX<span>PRO</span></div>
+    <nav class="steps" id="steps" aria-label="Steps"></nav>
+    <button class="reset" id="reset" type="button">New visitor</button>
+  </header>
+  <main id="main"></main>
+  <div class="nav"><button class="back" id="back" type="button">Back</button><button class="next" id="next" type="button">Next</button></div>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
+  function money(v){return '$'+Math.round(v).toLocaleString('en-US')}
+
+  var TYPES={
+    chiro:{name:'Chiropractic',sub:'Back pain, balance, maintenance care',members:150,dues:79,pct:25,addon:39,visits:10,vadd:30,packs:6,
+      research:['back','balance','fibro','neuro','bp','lymph'],
+      meta:['Low back pain, balance, fibromyalgia','Pre-adjustment warm-up and between-visit care','Keeps maintenance patients coming in'],
+      flow:[['Intake','Screen & clear','Add plate questions to the new-patient form. The doctor clears at the exam.'],['Every visit','Warm-up on the plate','5–8 minutes of gentle stance and squat holds while they wait for the table.'],['Between visits','Plate-only drop-ins','Active-care patients come in 1–2 extra days a week.'],['Weeks 6–12','Show progress','Re-test single-leg stance and pain score against baseline.'],['Maintenance','Wellness membership','Monthly adjustments plus unlimited plate access.']]},
+    pt:{name:'Physical therapy',sub:'Rehab, strength, post-discharge',members:80,dues:99,pct:30,addon:49,visits:8,vadd:20,packs:6,
+      research:['neuro','strength','knee','balance','back','lymph'],
+      meta:['Neuro rehab, knee arthritis, leg strength','Inside the exercise plan, then the bridge after discharge','Discharged patients become cash-pay members'],
+      flow:[['Evaluation','Screen & baseline','Therapist clears and records Timed Up-and-Go and sit-to-stand.'],['Plan of care','Exercise on the plate','Squat holds, heel raises and weight shifts during supervised exercise.'],['Weeks 4+','Progress the tier','Move to 30–40 Hz and dynamic work.'],['Discharge','Show the numbers','Re-test and hand the patient a progress report.'],['After discharge','Bridge membership','Cash-pay plate access keeps progress going.']]},
+    spa:{name:'Med spa & longevity',sub:'Healthy aging, recovery circuit',members:200,dues:149,pct:25,addon:59,visits:10,vadd:15,packs:10,
+      research:['lymph','bp','stiff','visceral','strength','balance'],
+      meta:['Lymphatic flow, blood pressure, healthy aging','Part of a recovery circuit with red light','Upgrade members to a higher tier'],
+      flow:[['Assessment','Longevity baseline','Blood pressure, balance and leg strength alongside your usual intake.'],['Each visit','Recovery circuit','10 minutes on the plate, then into red light or the treatment room.'],['Month one','Tier upgrade','The plate becomes the step up to the next membership tier.'],['Quarterly','Report card','Blood pressure and balance trends members look forward to.'],['Ongoing','Premium membership','Plate, red light and testing in one monthly price.']]},
+    senior:{name:'Senior wellness',sub:'Balance, strength, community',members:120,dues:69,pct:35,addon:39,visits:10,vadd:15,packs:6,
+      research:['balance','strength','legpress','copd','bp','lymph'],
+      meta:['Balance, leg strength, COPD endurance','Supervised balance and strength training','Small-group community keeps members'],
+      flow:[['Intake','Screen & fall-risk check','Full screening plus Timed Up-and-Go. Provider clearance for 65+.'],['Weeks 1–4','Supervised gentle tier','Static stance holding the rail, staff beside the plate.'],['Weeks 4+','Small-group class','Two plates side by side for a weekly balance class.'],['Every 8 weeks','Progress check','Up-and-Go, sit-to-stand and single-leg stance.'],['Ongoing','Monthly club','Classes plus open plate time.']]},
+    sport:{name:'Sports recovery',sub:'Activation, flexibility, recovery',members:150,dues:129,pct:30,addon:49,visits:12,vadd:25,packs:12,
+      research:['neuro','legpress','athlete','flex','lymph','jump'],
+      meta:['Leg strength, activation, flexibility','Activation warm-up and stretch pairing','Upgrades and team packages'],
+      flow:[['Intake','Screen & baseline','Quick screening plus sit-and-reach and single-leg balance.'],['Pre-training','Activation warm-up','Dynamic squats and lunges at higher settings.'],['Post-training','Plate & stretch','Static stretches on the plate, then your recovery menu.'],['Season','Team packages','Clubs and school teams buy group access.'],['Ongoing','Recovery membership','Unlimited plate access bundled with recovery services.']]},
+    func:{name:'Functional medicine',sub:'Low-impact movement programs',members:100,dues:199,pct:30,addon:49,visits:12,vadd:10,packs:6,
+      research:['bp','visceral','lymph','diabetes','fibro','strength'],
+      meta:['Blood pressure, lymphatic flow, fibromyalgia','Low-impact movement prescription','Program package into maintenance'],
+      flow:[['Intake','Labs & vitals baseline','Blood pressure, 6-minute walk and symptom scores.'],['Program start','Movement prescription','Plate sessions for patients who can’t do regular exercise.'],['12 weeks','Program package','Plate access bundled into a fixed program.'],['Program end','Re-test','Blood pressure, walk distance and symptoms against baseline.'],['Ongoing','Maintenance membership','Keep plate access and quarterly check-ins.']]},
+    glp:{name:'GLP-1 & peptide',sub:'Protect muscle during weight loss',members:200,dues:349,pct:30,addon:49,visits:8,vadd:15,packs:8,
+      research:['muscle','lean','visceral','surgery','bp','lymph'],
+      meta:['Muscle protection, visceral fat, blood pressure','Muscle protection while the weight comes off','Muscle-protect add-on kept after the program'],
+      flow:[['Intake','Screen & baseline','Record weight, grip and a 30-second sit-to-stand.'],['Weekly visit','10 minutes on the plate','Squat holds and calf raises at every injection or check-in.'],['Between visits','Plate-only drop-ins','2 extra visits a week to keep leg muscle working.'],['Monthly','Strength check','Sit-to-stand and grip with the weigh-in.'],['After the program','Maintenance membership','Plate access keeps patients once weight loss ends.']]},
+    gym:{name:'Gyms & fitness',sub:'Warm-up station, recovery zone',members:800,dues:59,pct:8,addon:25,visits:8,vadd:10,packs:8,
+      research:['legpress','jump','athlete','neuro','flex','lymph'],
+      meta:['Leg strength, jump power, warm-up activation','Warm-up station and recovery zone','Premium recovery tier upgrade'],
+      flow:[['Onboarding','Screen at sign-up','Plate questions go in the new-member waiver.'],['Before workouts','Activation warm-up','5 minutes of dynamic squats and lunges.'],['After workouts','Recovery zone','Static stretches on the plate.'],['Month one','Premium tier','Plate and recovery access drive the tier upgrade.'],['Ongoing','Mobility classes','Small-group sessions fill quiet hours.']]},
+    iv:{name:'IV drip lounge',sub:'Pre-drip warm-up, more visits',members:250,dues:149,pct:20,addon:49,visits:6,vadd:25,packs:10,
+      research:['lymph','flow','neuro','bp','strength','balance'],
+      meta:['Circulation, lymphatic and fluid flow','Pre-drip warm-up and visits between drips','Drip-and-plate membership tier'],
+      flow:[['Intake','Screen & clear','The nurse clears plate use with the IV assessment.'],['Before the chair','Pre-drip warm-up','5–10 minutes on the plate while the bag is mixed.'],['Between drips','Plate-only drop-ins','Members come in 1–2 extra times a week.'],['Month one','Drip & plate tier','Monthly drips plus unlimited plate access.'],['Ongoing','Win back guests','Send past guests a free 3-pack.']]}
+  };
+  var STATS={
+    back:['10/10','Back pain studies','Every study that measured pain found it dropped. 821 patients.','Remer 2023 · Wien Med Wochenschr',3,'Systematic review of 12 studies','Pain dropped in all 10 studies that measured it. Daily function improved in 5 of 6, physical function in 4 of 4, and body awareness in 3 of 3. No side effects reported. Strongest when combined with core work.'],
+    balance:['13','Balance trials','Better balance and Timed Up-and-Go in older adults.','Lam 2012 · Maturitas',3,'Meta-analysis, 13 trials','Older adults gained on balance scores and the Timed Up-and-Go test. A 2024 review in Physical Therapy found the same in nursing-home residents over 80. Settings of 20–40 Hz ranked best.'],
+    fibro:['7','Fibromyalgia RCTs','Better symptom scores, stability and walking.','Chang 2025 · Scientific Reports',2,'Meta-analysis, 7 randomized trials','Improved Fibromyalgia Impact scores, overall stability and 6-minute walk distance compared with exercise or usual care.'],
+    neuro:['37','Stroke rehab RCTs','Gains in motor function, balance, gait and spasticity.','Wang 2026 · J NeuroEng Rehabil',2,'Meta-analysis, 37 RCTs, 1,492 patients','Vibration triggers rapid reflex muscle contractions. EMG studies show more hip and leg activation at 25–40 Hz, even in weakened limbs. Spasticity improved most in chronic stroke on programs of 4+ weeks.'],
+    bp:['−6.6','mmHg systolic','Across 14 randomized trials in 490 adults.','Pan 2026 · Blood Pressure',3,'Meta-analysis, 14 RCTs','Systolic fell about 6.6 points and diastolic about 3. People starting with higher blood pressure dropped about 11 points, and overweight adults about 9.'],
+    stiff:['−0.68','m/s artery stiffness','Pulse wave velocity improved across 7 trials.','Luo 2025 · Blood Pressure',3,'Meta-analysis, 7 RCTs','Long-term vibration training reduced pulse wave velocity, augmentation index and resting blood pressure, all markers of healthier arteries.'],
+    lymph:['+30%','Calf blood flow','With enhanced lymphatic flow on a vibration platform.','Stewart 2004 · Am J Physiol',2,'Randomized clinical trial, 18 women aged 46–63','A 45 Hz platform raised calf blood flow 30% and pelvic flow 26%, and raised the pressure needed before swelling forms from 24 to 31 mmHg. The authors credited enhanced lymphatic flow and venous drainage.'],
+    flow:['3.2','Effect size, limb volume','Vibrotherapy added to lymphatic drainage, RCT.','Schneider 2018 · Physiother Theory Pract',2,'Randomized controlled trial, 30 women','Adding low-frequency vibrotherapy to manual lymphatic drainage produced much larger reductions in limb size and better quality of life than drainage alone.'],
+    strength:['0.50','Leg strength effect','Moderate gains in older adults, 6 RCTs.','Beom 2026 · Scientific Reports',3,'Meta-analysis, 6 RCTs','Moderate gains in leg strength and physical performance in older adults with age-related muscle loss.'],
+    knee:['14–16','Knee arthritis RCTs','Extra pain relief and function with exercise.','Qiu 2022 · J Rehabil Med',2,'Two meta-analyses, 14 and 16 RCTs','Added on top of strengthening exercise, vibration gave extra pain relief, knee strength and function.'],
+    copd:['+62 m','6-minute walk','People with COPD walked farther, 8 trials.','Zhou 2018 · Int J COPD',3,'Meta-analysis, 8 RCTs, 365 patients','About 62 meters farther in the 6-minute walk, faster sit-to-stand and better quality of life scores, with no side effects.'],
+    flex:['9–39%','Flexibility gain','Athletes training at 30 Hz.','Đorđević 2022 · Medicina',1,'Systematic review, 9 studies','Front-split, sit-and-reach and bridge flexibility all improved, and vibration paired well with static stretching.'],
+    diabetes:['A1C','Emerging','Larger A1C drops than conventional exercise in one analysis.','Binesh 2024 · Scientific Reports',1,'Network meta-analysis','Vibration reduced A1C more than conventional or resistance exercise in type 2 diabetes. Few studies so far.'],
+    muscle:['~28%','Of GLP-1 weight loss is muscle','Median across 35 incretin trials.','Batsis 2026 · Ann Intern Med',3,'Systematic review, 35 RCTs','Across semaglutide, tirzepatide, liraglutide and dulaglutide trials, a median of about 28% of the weight lost came from muscle-based tissue. Two-thirds of trials passed the expected benchmark. Loading the muscles is the proven counter.'],
+    visceral:['−48 cm²','Visceral fat','Diet plus vibration at 6 months, vs −24 with diet alone.','Vissers 2010 · Obesity Facts',2,'Randomized controlled trial, 6 + 6 months','Adding vibration training to caloric restriction cut visceral fat by about 48 cm² at 6 months and held at 12, more than diet alone or diet plus fitness training. Weight loss of 5% or more was maintained long term.'],
+    lean:['0 of 18','Studies showing muscle loss','No vibration study in adults with obesity found lean loss.','Zago 2018 · PLoS One',2,'Systematic review, 18 studies','Typical programs ran 3 sessions a week at 25–40 Hz and 1–2 mm. Ten weeks added to a lower-calorie diet improved weight, fat mass, leg strength and glucose control. No study found lean mass loss.'],
+    surgery:['Less','Muscle lost after surgery','Vibration after sleeve gastrectomy, pilot RCT.','Ara-Gimeno 2026 · Obesity Surgery',1,'Pilot randomized trial, 26 patients','After weight-loss surgery, 16 weeks of vibration training reduced the loss of arm and leg lean tissue compared with usual care. Resting metabolic rate dropped 20% less, a trend worth watching.'],
+    legpress:['0.79','Leg press effect size','21 RCTs, 748 healthy women.','Qiu 2025 · PLoS One',3,'Meta-analysis, 21 RCTs','Clear gains in leg press, knee extension, calf strength and jump height. Settings above 30 Hz and programs of 12+ weeks gave the biggest results, and post-menopausal women gained the most power.'],
+    jump:['+CMJ','Jump height','Added even versus other exercise programs.','Qiu 2025 · PLoS One',2,'Meta-analysis, 21 RCTs','Compared with other exercise programs, vibration training still added countermovement jump height, a direct measure of leg power.'],
+    athlete:['18','Athlete RCTs','Stronger knee extensors and flexors.','Peng 2024 · J Hum Kinet',2,'Meta-analysis, 18 RCTs','Vibration training increased concentric knee extensor and flexor strength in athletes. Platforms also ranked with dynamic stretching as top warm-ups for power (Yu 2024).']
+  };
+
+  var STEPS=['Welcome','Research','Playbook','Your numbers','Details','Next step'];
+  var S={step:0,type:null,c:null};
+  var db=null, canSave=false;
+
+  function resetCalc(t){var p=TYPES[t]||TYPES.chiro;S.c={members:p.members,dues:p.dues,pct:p.pct,addon:p.addon,visits:p.visits,vadd:p.vadd,packs:p.packs,plates:Math.round(p.members*p.pct/100)>50?2:1}}
+  function compute(){
+    var c=S.c, inv=c.plates===2?2400:1700, cap=50*c.plates, want=Math.round(c.members*c.pct/100), up=Math.min(want,cap);
+    var mUp=up*c.addon, mVa=c.vadd*4.33*12, mPk=c.packs*85, mCo=(up*c.visits+c.vadd*4.33+c.packs*5)*0.25;
+    var mon=mUp+mVa+mPk-mCo, pay=mon>0?inv/mon:null, wk=pay?Math.round(pay*4.33):0;
+    return {inv:inv,up:up,want:want,mUp:mUp,mVa:mVa,mPk:mPk,mCo:mCo,mon:mon,when:pay===null?'—':(pay<4?'about '+Math.max(1,wk)+(wk<=1?' week':' weeks'):'about '+(Math.round(pay*10)/10)+' months')};
+  }
+
+  function renderSteps(){
+    $('steps').innerHTML=STEPS.map(function(s,i){return '<button type="button" class="sbtn" data-i="'+i+'"'+(i===S.step?' aria-current="step"':'')+'><i>'+['i','ii','iii','iv','v','vi'][i]+'</i>'+s+'</button>'}).join('');
+    [].forEach.call($('steps').children,function(b){b.onclick=function(){go(+b.dataset.i)}});
+    $('back').disabled=S.step===0;
+    $('next').textContent=S.step===5?'New visitor':S.step===0&&!S.type?'Skip':'Next';
+  }
+  function go(i){
+    if(i>0&&!S.type){S.type='spa';resetCalc('spa');}
+    S.step=Math.max(0,Math.min(5,i)); renderSteps(); render(); $('main').scrollTop=0;
+  }
+
+  function render(){
+    var m=$('main'), t=TYPES[S.type];
+    if(S.step===0){
+      m.innerHTML='<div class="screen"><div class="eyebrow">VBX Pro · For clinics</div><h1>See what one plate<br><em>earns your clinic.</em></h1><p class="lead">What kind of clinic do you run?</p><div class="grid g3" id="types"></div></div>';
+      $('types').innerHTML=Object.keys(TYPES).map(function(k){var x=TYPES[k];return '<button type="button" class="tile'+(S.type===k?' on':'')+'" data-k="'+k+'"><b>'+esc(x.name)+'</b><span>'+esc(x.sub)+'</span></button>'}).join('');
+      [].forEach.call($('types').children,function(b){b.onclick=function(){S.type=b.dataset.k;resetCalc(S.type);go(1)}});
+    }
+    else if(S.step===1){
+      m.innerHTML='<div class="screen"><div class="eyebrow">The research · '+esc(t.name)+'</div><h2>What the studies show for <em>your patients.</em></h2><p class="note">Tap any card for the full finding.</p><div class="grid g3" id="stats"></div>'+
+        '<div class="mech"><div class="eyebrow">How it moves fluid</div><div class="mflow"><div><b>1</b><span>The plate vibrates 20–45 times a second</span></div><div><b>2</b><span>Leg muscles contract by reflex</span></div><div><b>3</b><span>Contractions squeeze lymph and blood vessels</span></div><div><b>4</b><span>One-way valves push fluid back toward the heart</span></div></div></div>'+
+        '<p class="note">From systematic reviews, meta-analyses and clinical trials indexed in PubMed.</p></div>';
+      $('stats').innerHTML=t.research.map(function(k,i){var s=STATS[k];var bars='';for(var j=1;j<=4;j++)bars+='<i'+(j<=s[4]?' class="on"':'')+'></i>';return '<button type="button" class="stat'+(i<2?' hl':'')+'" aria-expanded="false"><div class="v">'+esc(s[0])+'</div><div class="l">'+esc(s[1])+'</div><div class="d">'+esc(s[2])+'</div><div class="more"><div class="meter"><span class="bars">'+bars+'</span>'+['','Emerging','Low–moderate','Moderate','Strong'][s[4]]+' evidence</div><div class="kind">'+esc(s[5])+'</div><p>'+esc(s[6])+'</p></div><div class="src">'+esc(s[3])+'</div></button>'}).join('');
+      [].forEach.call($('stats').children,function(c){c.onclick=function(){var o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)}});
+    }
+    else if(S.step===2){
+      m.innerHTML='<div class="screen"><div class="eyebrow">Your playbook · '+esc(t.name)+'</div><h2>Where the plate fits <em>your day.</em></h2><div class="meta"><div><span class="k">Lead research</span><span class="v">'+esc(t.meta[0])+'</span></div><div><span class="k">The plate’s role</span><span class="v">'+esc(t.meta[1])+'</span></div><div><span class="k">Membership lever</span><span class="v">'+esc(t.meta[2])+'</span></div></div><div class="flow">'+
+        t.flow.map(function(f,i){return '<div class="fs"><div class="n">'+(i+1)+'</div><div class="st">'+esc(f[0])+'</div><b>'+esc(f[1])+'</b><span>'+esc(f[2])+'</span></div>'}).join('')+'</div>'+(S.type==='iv'?'<p class="note">Never use the plate during an active infusion.</p>':'')+
+        '<div class="eyebrow" style="margin-top:8px">Three protocol tiers</div><div class="grid g3"><div class="tier"><b>Gentle</b><span class="t">5–8 min · 20–25 Hz</span><span>Static stance, low intensity, hands on the rail. New, older or deconditioned patients.</span></div><div class="tier"><b>Standard</b><span class="t">10 min · 25–35 Hz</span><span>Squat holds, calf raises, band rows. Active exercise gets the best results.</span></div><div class="tier"><b>Athletic</b><span class="t">10–12 min · 30–40 Hz</span><span>Dynamic squats and lunges for warm-up and activation.</span></div></div></div>';
+    }
+    else if(S.step===3){
+      m.innerHTML='<div class="screen"><div class="eyebrow">Your numbers · '+esc(t.name)+'</div><h2>How fast it <em>pays for itself.</em></h2><div class="calc"><div class="inputs" id="inputs"></div><div class="out" aria-live="polite" id="out"></div></div></div>';
+      var rows=[['members','Active members','',10,''],['dues','Monthly dues per member','',5,'$'],['pct','Members who add plate access','% of members',5,'%'],['addon','Add-on price per member','per month',5,'$'],['vadd','Visit add-ons sold per week','$12 each at checkout',5,''],['packs','Starter packs sold per month','about $85 each',2,'']];
+      $('inputs').innerHTML=rows.map(function(r){var pre=r[4]==='$'?'<span>$</span>':'',post=r[4]==='%'?'<span>%</span>':'';return '<div class="row"><label for="i-'+r[0]+'">'+r[1]+(r[2]?'<small>'+r[2]+'</small>':'')+'</label><div class="stepper"><button type="button" data-k="'+r[0]+'" data-d="-'+r[3]+'" aria-label="Decrease">−</button><div class="in">'+pre+'<input id="i-'+r[0]+'" type="number" inputmode="numeric" value="'+S.c[r[0]]+'">'+post+'</div><button type="button" data-k="'+r[0]+'" data-d="'+r[3]+'" aria-label="Increase">+</button></div></div>'}).join('')+
+        '<div class="row"><label>Plates<small>One plate serves about 50 members</small></label><div class="seg"><button type="button" data-p="1">One · $1,700</button><button type="button" data-p="2">Two · $2,400</button></div></div>';
+      [].forEach.call($('inputs').querySelectorAll('.stepper button'),function(b){b.onclick=function(){var k=b.dataset.k;S.c[k]=Math.max(0,(+S.c[k]||0)+(+b.dataset.d));if(k==='pct')S.c[k]=Math.min(100,S.c[k]);$('i-'+k).value=S.c[k];out()}});
+      [].forEach.call($('inputs').querySelectorAll('input'),function(i){i.oninput=function(){var v=parseFloat(i.value);S.c[i.id.slice(2)]=isFinite(v)&&v>0?v:0;out()}});
+      [].forEach.call($('inputs').querySelectorAll('.seg button'),function(b){b.onclick=function(){S.c.plates=+b.dataset.p;out()}});
+      out();
+    }
+    else if(S.step===4){
+      m.innerHTML='<div class="screen"><div class="eyebrow">The details</div><h2>Everything you\u2019ll <em>want to know.</em></h2><div class="seg dtabs" id="dtabs"><button type="button" data-t="setup" class="on">Setup &amp; staff</button><button type="button" data-t="settings">Settings</button><button type="button" data-t="safety">Safety</button><button type="button" data-t="menu">Menu &amp; packs</button><button type="button" data-t="compare">Compare</button></div><div id="dbody"></div></div>';
+      var D={
+        setup:'<div class="grid g3"><div class="tier"><b>Footprint</b><span class="t">~20 sq ft</span><span>27.5 × 18.7 in plate, 400 lb capacity. A 4 × 5 ft zone against a wall rail. Plugs into a standard outlet, no build-out.</span></div><div class="tier"><b>Who runs it</b><span class="t">Tech or front desk</span><span>A provider clears the patient at intake in 2–3 minutes. After that, a trained tech or front-desk staffer runs sessions, about 5 minutes each.</span></div><div class="tier"><b>Capacity</b><span class="t">~32 sessions a day</span><span>10 minutes on the plate plus 5 to turn over. One plate serves a membership base of about 50.</span></div></div><div class="eyebrow" style="margin-top:6px">The 60-day launch</div><div class="flow"><div class="fs"><div class="n">1</div><b>Prep</b><span>Screening form, protocol tiers, add-on and packs in your billing system.</span></div><div class="fs"><div class="n">2</div><b>Launch week</b><span>Free trials for active patients and members.</span></div><div class="fs"><div class="n">3</div><b>Weeks 2–4</b><span>Offer the add-on at every checkout.</span></div><div class="fs"><div class="n">4</div><b>Week 4</b><span>Count upgrades and pack sales. Adjust the script.</span></div><div class="fs"><div class="n">5</div><b>Day 60</b><span>Compare real numbers against this estimate.</span></div></div>',
+        settings:'<div class="grid g3"><div class="tier"><b>Frequency</b><span class="t">20–45 Hz</span><span>Muscle activity rises with frequency. 20–30 Hz for balance and gentle work, 30+ Hz for strength, ~45 Hz in the circulation trial.</span><span class="sn">Ritzmann 2012 · Qiu 2025 · Stewart 2004</span></div><div class="tier"><b>Amplitude</b><span class="t">1–2 mm</span><span>How far the plate travels. Most obesity trials used 1–2 mm at 25–40 Hz. Raise one setting at a time.</span><span class="sn">Zago 2018</span></div><div class="tier"><b>Motion</b><span class="t">Side-alternating</span><span>Seesaw motion produced more leg muscle activity than vertical in a crossover EMG study. Both are well tolerated.</span><span class="sn">Ritzmann 2012 · Reis-Silva 2026</span></div><div class="tier"><b>Knee angle</b><span class="t">~60°</span><span>A deeper knee bend gave the most quad activity; forefoot stance targets calves. Soft knees keep vibration off the head.</span><span class="sn">Ritzmann 2012</span></div><div class="tier"><b>Added load</b><span class="t">Athletic tier</span><span>Extra load, about a third of body weight, raised activation further. Dumbbells or a vest, trained members only.</span><span class="sn">Ritzmann 2012</span></div><div class="tier"><b>Dose</b><span class="t">3× a week</span><span>Ten-minute sessions in short sets with rest. Results grow over 6 to 12+ weeks. Keep daily exposure within ISO 2631-1.</span><span class="sn">Zago 2018 · Qiu 2025</span></div></div>',
+        safety:'<div class="grid" style="grid-template-columns:1fr 1fr"><div class="tier"><b>Do not use</b><span>Pregnancy · pacemaker or implanted electronic device · active blood clot or DVT · recent surgery or joint, cochlear or corneal implant · epilepsy · acute injury or recent fracture · active cancer</span></div><div class="tier"><b>Provider judgment</b><span>Kidney or gallstones, hernia · inflammatory arthritis flare · recent cardiac event or uncontrolled blood pressure · diabetes with neuropathy · migraine or vestibular disorders · severe osteoporosis · recent IUD</span></div></div><div class="grid g3"><div class="tier"><b>Soft knees</b><span>Never locked. Weight through the whole foot.</span></div><div class="tier"><b>Start low</b><span>Every new patient begins at the lowest setting.</span></div><div class="tier"><b>Stop signs</b><span>Dizziness, chest pain or numbness ends the session.</span></div></div>',
+        menu:'<div class="grid g4"><div class="tier"><b>3-pack</b><span class="t">$54</span><span>$18 a session. A first taste for new and lapsed patients.</span></div><div class="tier"><b>5-pack</b><span class="t">$85</span><span>$17 a session. About two weeks of use.</span></div><div class="tier"><b>10-pack</b><span class="t">$150</span><span>$15 a session. A month of regular use.</span></div><div class="tier hlt"><b>Membership add-on</b><span class="t">$39–$59/mo</span><span>Unlimited access. About $6 a session at 8 uses.</span></div></div><div class="grid g3"><div class="tier"><b>Visit add-on</b><span class="t">$10–$15</span><span>Offered at checkout on a visit they already booked.</span></div><div class="tier"><b>Pack-to-member credit</b><span>Pack spend in the last 30 days counts toward month one of membership.</span></div><div class="tier"><b>Win-back offer</b><span>Send lapsed members a free 3-pack.</span></div></div>',
+        compare:'<div class="tbl"><div class="tr th"><span>Modality</span><span>Equipment</span><span>Build-out</span><span>Staffing</span></div><div class="tr us"><span>VBX Pro</span><span>$1,200–$1,700</span><span>None, standard outlet</span><span>Tech-run</span></div><div class="tr"><span>Red light panel</span><span>~$6,500</span><span>Private space</span><span>Self-serve</span></div><div class="tr"><span>Red light bed</span><span>$20,000–$100,000</span><span>Dedicated room</span><span>Self-serve</span></div><div class="tr"><span>Cryotherapy</span><span>Tens of thousands</span><span>Room build-out</span><span>Staffed every session</span></div></div><p class="note">The lowest capital way to add a new service to your membership.</p>'
+      };
+      function showD(k){$('dbody').innerHTML=D[k];[].forEach.call($('dtabs').children,function(b){b.classList.toggle('on',b.dataset.t===k)})}
+      [].forEach.call($('dtabs').children,function(b){b.onclick=function(){showD(b.dataset.t)}});
+      showD('setup');
+    }
+    else {
+      var r=compute();
+      m.innerHTML='<div class="screen"><div class="eyebrow">Next step</div><h2>Let’s set up <em>your clinic.</em></h2><div class="leadwrap"><div id="formbox"></div><div class="side"><div class="card"><span class="k">Your estimate</span><span class="v">'+(r.mon>0?'+'+money(r.mon)+' a month':'—')+'</span><span style="color:var(--muted);font-size:14px">Plate pays back in '+esc(r.when)+'</span></div><div class="card"><span class="k">Anthony Boromei · VBX Pro</span><span class="v">(813) 778-4847</span><span class="v" style="font-size:17px">Anthony@vbxpro.com</span></div><div class="card" id="recentbox" hidden><span class="k">Today’s leads · only you see this</span><div class="recent" id="recent"></div></div></div></div></div>';
+      renderForm(); renderRecent();
+    }
+  }
+  function out(){
+    var r=compute(), c=S.c;
+    [].forEach.call(document.querySelectorAll('.seg button'),function(b){b.classList.toggle('on',+b.dataset.p===c.plates)});
+    $('out').innerHTML='<span class="k">The plate pays for itself in</span><div class="pay">'+esc(r.when)+'</div><span class="k">Then every month</span><div class="mon">'+(r.mon>=0?'+':'−')+money(Math.abs(r.mon))+'</div>'+
+      '<div class="lines"><div class="ln"><span>'+r.up+' members add it at '+money(c.addon)+'</span><b>+'+money(r.mUp)+'</b></div><div class="ln"><span>'+c.vadd+' visit add-ons a week</span><b>+'+money(r.mVa)+'</b></div><div class="ln"><span>'+c.packs+' starter packs a month</span><b>+'+money(r.mPk)+'</b></div><div class="ln"><span>Running cost</span><b>−'+money(r.mCo)+'</b></div><div class="ln"><span>'+(c.plates===2?'Two plates':'One plate')+', paid once</span><b>'+money(r.inv)+'</b></div></div>'+
+      (r.want>50*c.plates?'<p class="note">'+r.want+' members want access. Add a plate to serve them all.</p>':'')+'<details class="how"><summary>How these numbers work</summary><ul><li>Members who add it pay the add-on every month for unlimited plate access. Market rate for unlimited vibration on its own: about $49–$64 a month.</li><li>Visit add-ons are 10-minute sessions sold at checkout for $12. Single sessions run $15–$27 on the market.</li><li>Starter packs (3, 5 and 10) average about $85 and move non-members toward joining.</li><li>Running cost is about 25¢ per use for a sanitizing wipe and power.</li><li>One plate comfortably serves about 50 members.</li></ul></details><p class="note">Estimates from the numbers above, not guaranteed results.</p>';
+  }
+  function renderForm(){
+    var t=TYPES[S.type];
+    $('formbox').innerHTML='<form id="lf" novalidate autocomplete="off">'+
+      '<div class="f"><label for="l-name">Name</label><input id="l-name"></div>'+
+      '<div class="f"><label for="l-clinic">Clinic</label><input id="l-clinic"></div>'+
+      '<div class="f"><label for="l-phone">Phone</label><input id="l-phone" type="tel" inputmode="tel"></div>'+
+      '<div class="f"><label for="l-email">Email</label><input id="l-email" type="email" inputmode="email"></div>'+
+      '<div class="f"><label for="l-time">Best time</label><select id="l-time"><option>Mornings</option><option>Afternoons</option><option>Evenings</option></select></div>'+
+      '<div class="f"><label for="l-temp">Interest</label><select id="l-temp"><option>Hot · ready now</option><option selected>Warm · follow up</option><option>Cool · info only</option></select></div>'+
+      '<div class="f full"><label for="l-notes">Notes</label><textarea id="l-notes" rows="2"></textarea></div>'+
+      '<p class="err" id="l-err" hidden>Add a name and a phone number or email.</p>'+
+      '<button type="submit" class="big-btn">Save lead</button></form>';
+    $('lf').onsubmit=function(e){
+      e.preventDefault();
+      var r=compute();
+      var l={name:$('l-name').value.trim(),clinic:$('l-clinic').value.trim(),type:t.name,phone:$('l-phone').value.trim(),email:$('l-email').value.trim(),time:$('l-time').value,interest:$('l-temp').value,notes:$('l-notes').value.trim(),
+        calc:{members:S.c.members,dues:S.c.dues,plates:S.c.plates,profit:Math.round(r.mon),payback:r.when},source:'booth',createdAt:Date.now()};
+      if(!l.name||(!l.phone&&!l.email)){$('l-err').hidden=false;return}
+      var msg='VBX Pro lead\n'+l.name+(l.clinic?' · '+l.clinic:'')+' · '+l.type+(l.phone?'\n'+l.phone:'')+(l.email?'\n'+l.email:'')+'\nBest time: '+l.time+' · '+l.interest+(l.notes?'\nNotes: '+l.notes:'')+'\nEstimate: +'+money(l.calc.profit)+'/mo, pays back in '+l.calc.payback;
+      function saved(ok){
+        $('formbox').innerHTML='<div class="done"><h3>'+(ok?'Saved. '+esc(l.name)+' is on your list.':'Not saved here. Text or email this to yourself.')+'</h3>'+(ok?'':'<pre>'+esc(msg)+'</pre>')+'<button type="button" class="big-btn" id="nv" style="width:100%">Next visitor</button></div>';
+        $('nv').onclick=newVisitor;
+      }
+      if(db&&canSave){db.collection('leads').add(l).then(function(){saved(true)},function(){saved(false)})} else saved(false);
+    };
+  }
+  var recentDocs=[];
+  function renderRecent(){
+    var box=$('recentbox'); if(!box)return;
+    if(!canSave){box.hidden=true;return}
+    box.hidden=false;
+    var today=new Date().toDateString();
+    var list=recentDocs.filter(function(d){return new Date(d.createdAt).toDateString()===today});
+    $('recent').innerHTML=list.length?list.map(function(d){return '<div><b>'+esc(d.name)+'</b> · '+esc(d.clinic||d.type)+'<br>'+esc(d.phone||d.email)+' · '+esc(d.interest||'')+'</div>'}).join(''):'<div>No leads yet today.</div>';
+  }
+  function newVisitor(){S.type=null;S.c=null;go(0)}
+
+  $('back').onclick=function(){go(S.step-1)};
+  $('next').onclick=function(){if(S.step===5)newVisitor();else go(S.step+1)};
+  $('reset').onclick=newVisitor;
+  go(0);
+
+  if(window.claude&&window.claude.use){
+    Promise.all([claude.use('db'),claude.use('user')]).then(function(r){
+      db=r[0];var u=r[1]; if(!db||!u)return;
+      return Promise.all([u.isOwner(),u.canEdit()]).then(function(f){
+        canSave=f[0]||f[1]; if(!canSave)return;
+        db.collection('leads').orderBy('createdAt','desc').limit(100).onSnapshot(function(snap){recentDocs=snap.docs.map(function(d){return d.data()||{}});renderRecent()});
+      });
+    }).catch(function(){});
+  }
+})();
+</script>
